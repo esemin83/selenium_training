@@ -14,28 +14,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_click_all.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test_click_all.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin_console.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fixture/admin_console.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="797">
-              <caret line="155" column="0" lean-forward="true" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -59,17 +38,20 @@
         <option value="$PROJECT_DIR$/application.py" />
         <option value="$PROJECT_DIR$/fixture/session.py" />
         <option value="$PROJECT_DIR$/test/test_login.py" />
-        <option value="$PROJECT_DIR$/fixture/application.py" />
         <option value="$PROJECT_DIR$/fixture/admin_console.py" />
         <option value="$PROJECT_DIR$/test/test_click_all.py" />
+        <option value="$PROJECT_DIR$/test/test_check_stikers.py" />
+        <option value="$PROJECT_DIR$/fixture/application.py" />
+        <option value="$PROJECT_DIR$/test/test_to_test.py" />
+        <option value="$PROJECT_DIR$/test/test_check_stickers.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="182" />
-    <option name="y" value="1" />
+    <option name="x" value="296" />
+    <option name="y" value="3" />
     <option name="width" value="1628" />
-    <option name="height" value="973" />
+    <option name="height" value="967" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -86,8 +68,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -130,10 +110,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../python_training" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -142,8 +124,8 @@
       <recent name="C:\dev\selenium_training\test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.py.test in test_click_all.py (1)">
-    <configuration default="false" name="py.test in test_login.py" type="tests" factoryName="py.test" temporary="true">
+  <component name="RunManager" selected="Python tests.py.test in test_check_stickers.py">
+    <configuration default="false" name="py.test in test_check_stickers.py" type="tests" factoryName="py.test" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -160,14 +142,14 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="$PROJECT_DIR$/test_login.py" />
+      <option name="testToRun" value="$PROJECT_DIR$/test/test_check_stickers.py" />
       <option name="keywords" value="" />
       <option name="params" value="" />
       <option name="USE_PARAM" value="false" />
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="py.test in test_click_all.py" type="tests" factoryName="py.test" temporary="true">
+    <configuration default="false" name="py.test in test_check_stickers_new" type="tests" factoryName="py.test" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -184,38 +166,14 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="$PROJECT_DIR$/test_click_all.py" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="py.test in test_click_all" type="tests" factoryName="py.test" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="selenium_training" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="$PROJECT_DIR$/test_click_all.py" />
-      <option name="keywords" value="test_click_all" />
+      <option name="testToRun" value="$PROJECT_DIR$/test/test_check_stickers.py" />
+      <option name="keywords" value="test_check_stickers_new" />
       <option name="params" value="" />
       <option name="USE_PARAM" value="false" />
       <option name="USE_KEYWORD" value="true" />
       <method />
     </configuration>
-    <configuration default="false" name="py.test in test_click_all.py (1)" type="tests" factoryName="py.test" temporary="true">
+    <configuration default="false" name="py.test in test_check_stickers_new (1)" type="tests" factoryName="py.test" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -232,14 +190,14 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="$PROJECT_DIR$/test/test_click_all.py" />
-      <option name="keywords" value="" />
+      <option name="testToRun" value="$PROJECT_DIR$/test/test_to_test.py" />
+      <option name="keywords" value="test_check_stickers_new" />
       <option name="params" value="" />
       <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
+      <option name="USE_KEYWORD" value="true" />
       <method />
     </configuration>
-    <configuration default="false" name="py.test in test_login.py (1)" type="tests" factoryName="py.test" temporary="true">
+    <configuration default="false" name="py.test in test_check_stickers_new_new" type="tests" factoryName="py.test" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -256,7 +214,31 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="$PROJECT_DIR$/test/test_login.py" />
+      <option name="testToRun" value="$PROJECT_DIR$/test/test_to_test.py" />
+      <option name="keywords" value="test_check_stickers_new_new" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="true" />
+      <method />
+    </configuration>
+    <configuration default="false" name="py.test in test_to_test.py" type="tests" factoryName="py.test" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="selenium_training" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="$PROJECT_DIR$/test/test_to_test.py" />
       <option name="keywords" value="" />
       <option name="params" value="" />
       <option name="USE_PARAM" value="false" />
@@ -398,19 +380,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in test_login.py" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in test_click_all.py" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in test_click_all" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.py.test in test_click_all.py (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.py.test in test_login.py (1)" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in test_check_stickers.py" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in test_check_stickers_new" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in test_check_stickers_new (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.py.test in test_check_stickers_new_new" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.py.test in test_to_test.py" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in test_click_all.py (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in test_login.py (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in test_click_all.py" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.py.test in test_login.py" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.py.test in test_click_all" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in test_check_stickers.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in test_check_stickers_new (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in test_to_test.py" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.py.test in test_check_stickers_new_new" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.py.test in test_check_stickers_new" />
       </list>
     </recent_temporary>
   </component>
@@ -428,57 +410,57 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_in_test_click_all_py_(1) - 2017.05.31 at 22h 42m 18s.xml">
-      <configuration name="py.test in test_click_all.py (1)" configurationId="tests" />
+    <history-entry file="py_test_in_test_check_stickers_new_(1) - 2017.06.01 at 23h 09m 33s.xml">
+      <configuration name="py.test in test_check_stickers_new (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_test_click_all_py_(1) - 2017.05.31 at 22h 50m 54s.xml">
-      <configuration name="py.test in test_click_all.py (1)" configurationId="tests" />
+    <history-entry file="py_test_in_test_check_stickers_new_(1) - 2017.06.01 at 23h 10m 39s.xml">
+      <configuration name="py.test in test_check_stickers_new (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_test_click_all_py_(1) - 2017.05.31 at 22h 53m 09s.xml">
-      <configuration name="py.test in test_click_all.py (1)" configurationId="tests" />
+    <history-entry file="py_test_in_test_check_stickers_new_(1) - 2017.06.01 at 23h 11m 05s.xml">
+      <configuration name="py.test in test_check_stickers_new (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_test_click_all_py_(1) - 2017.05.31 at 22h 54m 27s.xml">
-      <configuration name="py.test in test_click_all.py (1)" configurationId="tests" />
+    <history-entry file="py_test_in_test_check_stickers_py - 2017.06.01 at 23h 12m 39s.xml">
+      <configuration name="py.test in test_check_stickers.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_test_click_all_py_(1) - 2017.05.31 at 22h 57m 27s.xml">
-      <configuration name="py.test in test_click_all.py (1)" configurationId="tests" />
+    <history-entry file="py_test_in_test_check_stickers_py - 2017.06.01 at 23h 13m 34s.xml">
+      <configuration name="py.test in test_check_stickers.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_test_click_all_py_(1) - 2017.05.31 at 23h 04m 13s.xml">
-      <configuration name="py.test in test_click_all.py (1)" configurationId="tests" />
+    <history-entry file="py_test_in_test_check_stickers_py - 2017.06.01 at 23h 14m 15s.xml">
+      <configuration name="py.test in test_check_stickers.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_test_click_all_py_(1) - 2017.05.31 at 23h 07m 10s.xml">
-      <configuration name="py.test in test_click_all.py (1)" configurationId="tests" />
+    <history-entry file="py_test_in_test_to_test_py - 2017.06.01 at 23h 00m 42s.xml">
+      <configuration name="py.test in test_to_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_test_click_all_py_(1) - 2017.05.31 at 23h 09m 44s.xml">
-      <configuration name="py.test in test_click_all.py (1)" configurationId="tests" />
+    <history-entry file="py_test_in_test_to_test_py - 2017.06.01 at 23h 01m 00s.xml">
+      <configuration name="py.test in test_to_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_test_click_all_py_(1) - 2017.05.31 at 23h 16m 30s.xml">
-      <configuration name="py.test in test_click_all.py (1)" configurationId="tests" />
+    <history-entry file="py_test_in_test_to_test_py - 2017.06.01 at 23h 04m 17s.xml">
+      <configuration name="py.test in test_to_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_test_click_all_py_(1) - 2017.05.31 at 23h 19m 18s.xml">
-      <configuration name="py.test in test_click_all.py (1)" configurationId="tests" />
+    <history-entry file="py_test_in_test_to_test_py - 2017.06.01 at 23h 04m 45s.xml">
+      <configuration name="py.test in test_to_test.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="182" y="1" width="1628" height="973" extended-state="0" />
-    <editor active="true" />
+    <frame x="296" y="3" width="1628" height="967" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24689826" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24689826" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4849537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.488345" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39930555" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43123543" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -487,11 +469,27 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/test_check_stickers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_to_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/test_login.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -520,7 +518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -528,7 +525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -552,7 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="55" column="41" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -576,7 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="55" column="41" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -600,7 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="55" column="41" lean-forward="true" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="55" column="41" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -719,10 +711,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_to_test.py">
+    <entry file="file://$PROJECT_DIR$/fixture/session.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="74" lean-forward="false" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
+        <state relative-caret-position="238">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/admin_console.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -735,36 +741,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/session.py">
+    <entry file="file://$PROJECT_DIR$/test/test_to_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
-          <folding>
-            <element signature="e#173#203#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_click_all.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/admin_console.py">
+    <entry file="file://$PROJECT_DIR$/test/test_check_stickers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="797">
-          <caret line="155" column="0" lean-forward="true" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
           <folding />
         </state>
       </provider>

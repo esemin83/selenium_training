@@ -1,12 +1,15 @@
 
 
-def test_new(app):
+def test_check_stickers_new(app):
     wd = app.wd
-    wd.get("https://www.yandex.ru/")
-    wd.find_element_by_css_selector("input#text").send_keys("find_to_find")
-    wd.find_element_by_css_selector("div.search2__button button").click()
-
-
+    wd.get('http://localhost/litecart/public_html/en/')
+    # elements
+    elements = wd.find_elements_by_css_selector('li.product.column.shadow.hover-light')
+    for row in elements:
+        l = []
+        x1 = row.find_elements_by_css_selector("[class~=sticker]")
+        l.append(x1)
+        assert len(l) == 1
 
 
 
