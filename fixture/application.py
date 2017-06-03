@@ -30,11 +30,11 @@ class Application:
         #self.wd = webdriver.Firefox(firefox_binary="C:\\Program Files (x86)\\Nightly\\firefox.exe")
         #print(self.wd.capabilities)
 
-        #browser_path = "C:\\Program Files (x86)\\Nightly\\firefox.exe"
-        browser_path = "C:\\Program Files\\Firefox_53\\firefox.exe"
+        browser_path = "C:\\Program Files (x86)\\Nightly\\firefox.exe"
+        #browser_path = "C:\\Program Files\\Firefox_53\\firefox.exe"
         self.wd = webdriver.Firefox(firefox_binary=browser_path)
         #self.wd.maximize_window()
-        self.wd.implicitly_wait(1)
+        self.wd.implicitly_wait(3)
         #print(self.wd.capabilities)
 
         self.adm = Admin_console(self)
