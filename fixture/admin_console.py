@@ -1,3 +1,4 @@
+from countries import Countries
 
 
 class Admin_console:
@@ -149,7 +150,8 @@ class Admin_console:
         wd = self.app.wd
         wd.find_element_by_css_selector('li#app->a[href$="vqmods"]').click()
         assert "vQmods | My Store" in wd.title
-###########################################################
+######################################################################################################################
+######################################################################################################################
 
     def get_list_len(self, name):
         wd = self.app.wd
@@ -263,3 +265,51 @@ class Admin_console:
         wd = self.app.wd
         wd.find_element_by_css_selector('li#app->a[href$="vqmods"]').click()
         assert "vQmods | My Store" in wd.title
+
+######################################################################################################################
+######################################################################################################################
+
+    def get_countries_list_v1(self):
+        wd = self.app.wd
+        wd.find_element_by_css_selector('li#app->a[href$="countries"]').click()
+        elements = wd.find_elements_by_css_selector('tr.row')
+        l = []
+        for row in elements:
+            name = row.find_element_by_css_selector('tr.row td:nth-child(5)').get_attribute("textContent")
+            l.append(name)
+        return list(l)
+
+    def get_countries_list_v2(self):
+        wd = self.app.wd
+        wd.find_element_by_css_selector('li#app->a[href$="countries"]').click()
+        elements = wd.find_elements_by_css_selector('tr.row')
+        l = []
+        for row in elements:
+            id = row.find_element_by_css_selector('tr.row td:nth-child(3)').get_attribute("textContent")
+            name = row.find_element_by_css_selector('tr.row td:nth-child(5)').get_attribute("textContent")
+            geo_zones = row.find_element_by_css_selector('tr.row td:nth-child(6)').get_attribute("textContent")
+            l.append(Countries(id=id, name=name, geo_zones=geo_zones))
+        return l
+
+    def get_countries_list_v3(self):
+        wd = self.app.wd
+        wd.find_element_by_css_selector('li#app->a[href$="countries"]').click()
+        elements = wd.find_elements_by_css_selector('tr.row')
+        l = []
+        for row in elements:
+            id = row.find_element_by_css_selector('tr.row td:nth-child(3)').get_attribute("textContent")
+            name = row.find_element_by_css_selector('tr.row td:nth-child(5)').get_attribute("textContent")
+            geo_zones = row.find_element_by_css_selector('tr.row td:nth-child(6)').get_attribute("textContent")
+            l.append([int(id), name, int(geo_zones)])
+        return l
+
+    def get_countries_list_on_country_page(self, name):
+        wd = self.app.wd
+        wd.find_element_by_css_selector('li#app->a[href$="countries"]').click()
+        wd.find_element_by_link_text('%s' % name).click()
+        elements = wd.find_elements_by_css_selector('#table-zones td:nth-child(3)')
+        l = []
+        for row in elements:
+            name = row.find_element_by_css_selector('#table-zones td:nth-child(3) input').get_attribute("value")
+            l.append(name)
+        return l

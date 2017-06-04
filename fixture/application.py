@@ -30,6 +30,7 @@ class Application:
         #self.wd = webdriver.Firefox(firefox_binary="C:\\Program Files (x86)\\Nightly\\firefox.exe")
         #print(self.wd.capabilities)
 
+
         browser_path = "C:\\Program Files (x86)\\Nightly\\firefox.exe"
         #browser_path = "C:\\Program Files\\Firefox_53\\firefox.exe"
         self.wd = webdriver.Firefox(firefox_binary=browser_path)
@@ -37,6 +38,11 @@ class Application:
         self.wd.implicitly_wait(3)
         #print(self.wd.capabilities)
 
+
+        #self.wd = webdriver.Chrome()
+        #self.wd = webdriver.Firefox()
+
+        self.wd.implicitly_wait(3)
         self.adm = Admin_console(self)
         self.session = Session(self)
 

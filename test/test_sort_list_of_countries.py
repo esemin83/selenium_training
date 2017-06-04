@@ -1,43 +1,19 @@
-from countries import Countries
 
 
-#def test_list_len(app):
-#    app.session.login_as_admin()
-#    app.adm.get_list_len()
-
-#def test_click_row_in_element(app):
-#    app.session.login_as_admin()
-#    app.adm.click_row_in_element('template')
-
-#def test_new(app):
-#    app.session.login_as_admin()
-#    app.adm.click_appearence_new()
-
-
-def test_sadsasasd(app):
+def test_sort_countries_on_main_page(app):
     app.session.login_as_admin()
     countries_list = app.adm.get_countries_list_v3()
-
-    new_list = []
+    only_country_list = []
     for x in range(len(countries_list)):
-        if countries_list[x][2] > 0:
-            new_list.append(countries_list[x])
-
+        only_country_list.append(countries_list[x][1])
+    sorted_only_country_list = sorted(only_country_list)
+    assert sorted_only_country_list == only_country_list
     print('\n', countries_list)
-    print('\n', new_list)
-
-    # [[38, 'Canada', 13], [223, 'United States', 65]]
-
-
-def test_new(app):
-    app.session.login_as_admin()
-    l = app.adm.get_countries_list_on_country_page('Canada')
-    l.remove("")
-    print('\n', l)
-    #print('\n', x)
+    print('\n', only_country_list)
+    print('\n', sorted_only_country_list)
 
 
-def test_geo_zones(app):
+def test_sort_countries_on_country_page(app):
     app.session.login_as_admin()
     countries_list = app.adm.get_countries_list_v3()
 
