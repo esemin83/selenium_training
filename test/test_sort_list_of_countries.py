@@ -1,7 +1,8 @@
 
 
-def test_sort_countries_on_main_page(app):
+def test_sort_countries_on_main_page_and_geo_zones(app):
     app.session.login_as_admin()
+
     countries_list = app.adm.get_countries_list_v3()
     only_country_list = []
     for x in range(len(countries_list)):
@@ -11,11 +12,6 @@ def test_sort_countries_on_main_page(app):
     print('\n', countries_list)
     print('\n', only_country_list)
     print('\n', sorted_only_country_list)
-
-
-def test_sort_countries_on_country_page(app):
-    app.session.login_as_admin()
-    countries_list = app.adm.get_countries_list_v3()
 
     list_with_geo_zones = []
     for x in range(len(countries_list)):

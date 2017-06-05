@@ -1,4 +1,3 @@
-from countries import Countries
 
 
 class Admin_console:
@@ -268,28 +267,6 @@ class Admin_console:
 
 ######################################################################################################################
 ######################################################################################################################
-
-    def get_countries_list_v1(self):
-        wd = self.app.wd
-        wd.find_element_by_css_selector('li#app->a[href$="countries"]').click()
-        elements = wd.find_elements_by_css_selector('tr.row')
-        l = []
-        for row in elements:
-            name = row.find_element_by_css_selector('tr.row td:nth-child(5)').get_attribute("textContent")
-            l.append(name)
-        return list(l)
-
-    def get_countries_list_v2(self):
-        wd = self.app.wd
-        wd.find_element_by_css_selector('li#app->a[href$="countries"]').click()
-        elements = wd.find_elements_by_css_selector('tr.row')
-        l = []
-        for row in elements:
-            id = row.find_element_by_css_selector('tr.row td:nth-child(3)').get_attribute("textContent")
-            name = row.find_element_by_css_selector('tr.row td:nth-child(5)').get_attribute("textContent")
-            geo_zones = row.find_element_by_css_selector('tr.row td:nth-child(6)').get_attribute("textContent")
-            l.append(Countries(id=id, name=name, geo_zones=geo_zones))
-        return l
 
     def get_countries_list_v3(self):
         wd = self.app.wd
