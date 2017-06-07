@@ -5,6 +5,7 @@ from selenium import webdriver
 
 from fixture.admin_console import Admin_console
 from fixture.session import Session
+from fixture.litecart import Litecart
 
 
 class Application:
@@ -19,11 +20,12 @@ class Application:
 
         self.wd = webdriver.Chrome()
         #self.wd = webdriver.Ie()
-        print(self.wd.capabilities)
+        #print(self.wd.capabilities)
 
         self.wd.implicitly_wait(3)
         self.adm = Admin_console(self)
         self.session = Session(self)
+        self.lt = Litecart(self)
 
     def destroy(self):
         self.wd.quit()
