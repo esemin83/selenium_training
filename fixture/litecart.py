@@ -1,5 +1,6 @@
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import Select
+#from selenium.webdriver.common.action_chains import ActionChains
 
 
 class Litecart:
@@ -25,10 +26,15 @@ class Litecart:
         wd.find_element_by_name('city').send_keys('defoult')
         wd.find_element_by_name('email').clear()
         wd.find_element_by_name('email').send_keys('%s' % email)
-        # выпадашка #
-        wd.find_element_by_css_selector('span.select2-selection__arrow').click()
-        wd.find_element_by_css_selector('input.select2-search__field').clear()
-        wd.find_element_by_css_selector('input.select2-search__field').send_keys('United States' + Keys.ENTER)
+        # выпадашка 1#
+
+        #wd.find_element_by_css_selector('span.select2-selection__arrow').click()
+        #wd.find_element_by_css_selector('input.select2-search__field').clear()
+        #wd.find_element_by_css_selector('input.select2-search__field').send_keys('United States' + Keys.ENTER)
+
+        # выпадашка 2 c select#
+        select = Select(wd.find_element_by_css_selector('select.select2-hidden-accessible'))
+        select.select_by_value('US')
 
         wd.find_element_by_name('phone').clear()
         wd.find_element_by_name('phone').send_keys('+72001001010')

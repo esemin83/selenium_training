@@ -3,6 +3,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import re
 import string
 import random
+import os.path
 
 
 def test_re():
@@ -45,3 +46,17 @@ def test_where_are_you(app):
     size = element.size
     ActionChains(wd).move_by_offset('30', '705').click().perform()
     print(location, size)
+
+
+def test_get_l(app):
+    app.session.login_as_admin()
+    l = app.adm.get_product_list()
+    #k = l.index('aC')
+    try:
+        l.index('aaC')
+        print('in list')
+    except ValueError:
+        print('not in list')
+
+    #assert l.index('aC') is not None
+    print(l)

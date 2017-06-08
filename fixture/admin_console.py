@@ -1,3 +1,8 @@
+import os.path
+import time
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+
 
 
 class Admin_console:
@@ -282,11 +287,61 @@ class Admin_console:
 
     def get_countries_list_on_country_page(self, name):
         wd = self.app.wd
-        wd.find_element_by_css_selector('li#app->a[href$="countries"]').click()
+        #wd.find_element_by_css_selector('li#app->a[href$="countries"]').click()
         wd.find_element_by_link_text('%s' % name).click()
         elements = wd.find_elements_by_css_selector('#table-zones td:nth-child(3)')
         l = []
         for row in elements:
             name = row.find_element_by_css_selector('#table-zones td:nth-child(3) input').get_attribute("value")
             l.append(name)
+        return l
+
+######################################################################################################################
+######################################################################################################################
+
+    def create_product(self, product_name, file_name):
+        wd = self.app.wd
+        wd.find_element_by_css_selector('li#app->a[href$="catalog"]').click()
+        assert "Catalog | My Store" in wd.title
+
+        # GENERAL #
+        wd.find_element_by_css_selector('a[href$="edit_product"]').click()
+        wd.find_element_by_name('name[en]').send_keys('%s' % product_name)
+        wd.find_element_by_name('code').send_keys('321')
+        wd.find_element_by_name('quantity').send_keys(Keys.DELETE + '32')
+
+        # path #
+        file = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', file_name))
+        wd.find_element_by_css_selector('input[name="new_images[]"]').send_keys(file)
+
+        # for chrome only #
+        wd.find_element_by_name('date_valid_from').send_keys('08-06-2017')
+        wd.find_element_by_name('date_valid_to').send_keys('08-06-2018')
+
+        # PRICES #
+        time.sleep(1)
+        wd.find_element_by_css_selector('a[href="#tab-prices"]').click()
+        wd.find_element_by_name('purchase_price').send_keys(Keys.DELETE + '13')
+
+        # выпадашка select#
+        select = Select(wd.find_element_by_css_selector('select[name="purchase_price_currency_code"]'))
+        select.select_by_value('EUR')
+
+        # хитрое поле#
+        wd.find_element_by_name('gross_prices[USD]').send_keys(Keys.LEFT_CONTROL + 'a' +
+                                                               Keys.LEFT_CONTROL + Keys.DELETE + '3')
+        # submit #
+        wd.find_element_by_css_selector('button[name = "save"]').click()
+        print('!')
+
+    def get_product_list(self):
+        wd = self.app.wd
+        wd.find_element_by_css_selector('li#app->a[href$="catalog"]').click()
+        # a[href*="product_id"]:not([title="Edit"])
+        l = []
+        elements = wd.find_elements_by_css_selector('tr.row.semi-transparent')#:not([title="Edit"])')
+        for row in elements:
+            product_name = row.find_element_by_css_selector('a[href*="product_id"]:not([title="Edit"])')\
+                .get_attribute("innerText")
+            l.append(product_name)
         return l
