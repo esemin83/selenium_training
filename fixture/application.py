@@ -22,7 +22,9 @@ class Application:
         #self.wd = webdriver.Ie()
         #print(self.wd.capabilities)
 
-        self.wd.implicitly_wait(3)
+        # неявное ожидание #
+        #self.wd.implicitly_wait(3)
+
         self.adm = Admin_console(self)
         self.session = Session(self)
         self.lt = Litecart(self)

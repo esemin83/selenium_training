@@ -1,12 +1,16 @@
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 #from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 
 class Litecart:
 
     def __init__(self, app):
         self.app = app
+        self.wait = WebDriverWait(app.wd, 2)
 
     def create_new_user(self, first_name, last_name, email, password):
         wd = self.app.wd
@@ -73,3 +77,138 @@ class Litecart:
         wd.find_element_by_css_selector('div.content a[href$="edit_account"]').click()
         user = wd.find_element_by_name('email').get_attribute("value")
         return user
+
+######################################################################################################################
+######################################################################################################################
+
+    def open_first_product(self):
+        wd = self.app.wd
+        wait = self.wait
+        elements = wd.find_elements_by_css_selector('li.product.column.shadow.hover-light img')
+        elements[0].click()
+        # ожидание появления блока с информацией #
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "#tab-information")))
+
+    def add_product_to_cart(self):
+        wd = self.app.wd
+        wait = self.wait
+        # открыть первый продукт #
+        self.open_first_product()
+        # на случай выпадашки 1#
+        '''
+        try:
+            wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'select[name="options[Size]"]')))
+            select = Select(wd.find_element_by_css_selector('select[name="options[Size]"]'))
+            select.select_by_value('Small')
+            print('Попалась выпадашка')
+        except Exception:
+            pass
+        '''
+        # на случай выпадашки 2 - работает куда бестрее#
+        try:
+            wd.find_element_by_css_selector('select[name="options[Size]"]')
+            select = Select(wd.find_element_by_css_selector('select[name="options[Size]"]'))
+            select.select_by_value('Small')
+            print('\n', 'Попалась выпадашка')
+        except Exception:
+            pass
+
+        # текущее значение счетчика в корзине #
+        item_1 = int(wd.find_element_by_css_selector('span.quantity').get_attribute('innerText'))
+        # новое ожидаемое значение счетчика #
+        new_value_of_item = item_1 + 1
+
+        # нажать 'добавить' #
+        wd.find_element_by_css_selector('button[name="add_cart_product"]').click()
+        # ожидание обновления счетчика в корзине #
+        wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, 'span.quantity'), '%s' % new_value_of_item))
+
+        # новое значение счетчика в корзине #
+        item_2 = int(wd.find_element_by_css_selector('span.quantity').get_attribute('innerText'))
+        # проверка, что значение соответствует ожидаемому #
+        assert new_value_of_item == item_2
+        self.return_to_main_page()
+        print("\n" "item_old =", item_1, "\n" "item_new =", item_2)
+
+    def return_to_main_page(self):
+        wd = self.app.wd
+        wait = self.wait
+        wd.find_element_by_css_selector('li.general-0 a').click()
+        # ожидание пока большая картинка пропадет #
+        wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, 'a.main-image.fancybox.zoomable.shadow')))
+        # ожидание пока обновится заголовок #
+        wait.until(EC.title_is('Online Store | My Store'))
+
+    def cart_checkout(self):
+        wd = self.app.wd
+        wait = self.wait
+        wd.find_element_by_css_selector('a[href$="checkout"][class=link]').click()
+        # ожидание появления кнопки 'удалить' #
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'button[name="remove_cart_item"]')))
+        # ожидание пока обновится заголовок #
+        wait.until(EC.title_is('Checkout | My Store'))
+
+    def remove_product_one_by_one(self):
+        wait = self.wait
+        self.cart_checkout()
+        # всего уток#
+        count = self.count_in_table()
+        # уток в поле ввода#
+        current_value = self.current_value()
+        print('в поле ввода =', current_value, 'всего =', count)
+        for i in range(count):
+            c = int(self.current_value())
+            self.remove_one_duck_v2(c-1)
+        # ожидание появления кнопки/ссылки 'Back' #
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#checkout-cart-wrapper a[href$="/public_html/en/"]')))
+
+    def count_in_table(self):
+        wd = self.app.wd
+        l = []
+        elements = wd.find_elements_by_css_selector(
+            '#order_confirmation-wrapper tr:not([class="header"]):not([class="footer"]) td[style="text-align: center;"]')
+        for row in elements:
+            value = int(row.get_attribute('innerText'))
+            l.append(value)
+        count = sum(l)
+        return count
+
+    def current_value(self):
+        wd = self.app.wd
+        count = wd.find_element_by_css_selector('input[name="quantity"]').get_attribute('value')
+        return count
+
+    def remove_one_duck_v1(self, value):
+        wd = self.app.wd
+        wait = self.wait
+        # ввести новое значение #
+        wd.find_element_by_css_selector('input[name="quantity"]').click()
+        wd.find_element_by_css_selector('input[name="quantity"]').clear()
+        wd.find_element_by_css_selector('input[name="quantity"]').send_keys('%s' % value)
+        # обновить значение #
+        wd.find_element_by_css_selector('button[name="update_cart_item"]').click()
+        # ожидание изменения таблицы #
+        try:
+            wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR,'#order_confirmation-wrapper tr:not([class="header"]):not([class="footer"]) td[style="text-align: center;"]'), '%s' % value))
+            print('Количество уток поубавилось')
+        except Exception as txt:
+            print('Одноцветные утки кончились, или исключение =', txt)
+
+    def remove_one_duck_v2(self, value):
+        wd = self.app.wd
+        wait = self.wait
+        # ввести новое значение #
+        wd.find_element_by_css_selector('input[name="quantity"]').click()
+        wd.find_element_by_css_selector('input[name="quantity"]').clear()
+        wd.find_element_by_css_selector('input[name="quantity"]').send_keys('%s' % value)
+        # первый элемент который пропадет после обновления #
+        element = wd.find_element_by_css_selector(
+            'tr:not([class="header"]):not([class="footer"]) td[style="text-align: center;"]')
+        # обновить значение #
+        wd.find_element_by_css_selector('button[name="update_cart_item"]').click()
+        # ожидание изменения таблицы #
+        try:
+            wait.until(EC.staleness_of(element))
+            print('Количество уток поубавилось')
+        except Exception as txt:
+            print('Одноцветные утки кончились, или исключение =', txt)
