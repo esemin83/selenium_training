@@ -212,3 +212,40 @@ class Litecart:
             print('Количество уток поубавилось')
         except Exception as txt:
             print('Одноцветные утки кончились, или исключение =', txt)
+
+#######################################################################################################################
+
+    def remove_product_one_by_one_v01(self):
+        wd = self.app.wd
+        wait = self.wait
+        self.cart_checkout()
+        # всего уток#
+        elements_in_table = self.elements_in_table()
+        print('elements =', elements_in_table, '\n', 'elements_len =', len(elements_in_table))
+        for i in range(len(elements_in_table)):
+            first_value_in_table = wd.find_element_by_css_selector(
+                'tr:not([class="header"]):not([class="footer"]) td[style="text-align: center;"]')
+            self.remove_product()
+            try:
+                # ожидание изменения первого элемента таблицы #
+                wait.until(EC.staleness_of(first_value_in_table))
+                print('Количество уток поубавилось')
+            except Exception as txt:
+                print('Исключение =', txt)
+        # ожидание появления кнопки/ссылки 'Back' #
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#checkout-cart-wrapper a[href$="/public_html/en/"]')))
+
+    def elements_in_table(self):
+        wd = self.app.wd
+        elements = wd.find_elements_by_css_selector('#order_confirmation-wrapper tr:not([class="header"]):not([class="footer"]) td[style="text-align: center;"]')
+        l = []
+        for i in range(len(elements)):
+            l.append(elements[0])
+        return l
+
+    def remove_product(self):
+        wd = self.app.wd
+        wd.find_element_by_css_selector('button[name="remove_cart_item"]').click()
+
+
+
