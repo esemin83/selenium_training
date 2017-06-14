@@ -2,13 +2,16 @@ import os.path
 import time
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
-
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 
 class Admin_console:
 
     def __init__(self, app):
         self.app = app
+        self.wait = WebDriverWait(app.wd, 5)
 
     def click_appearence(self):
         wd = self.app.wd
@@ -345,3 +348,42 @@ class Admin_console:
                 .get_attribute("innerText")
             l.append(product_name)
         return l
+
+######################################################################################################################
+
+    def create_new_country(self):
+        wd = self.app.wd
+        wait = self.wait
+        wd.find_element_by_css_selector('a[href$="edit_country"]').click()
+        wait.until(EC.presence_of_element_located((By.NAME, 'iso_code_2')))
+
+    def get_main_window_id(self):
+        wd = self.app.wd
+        l = wd.window_handles
+        x = l[0]
+        return x
+
+    def get_new_window_id(self, main_window):
+        wd = self.app.wd
+        l = wd.window_handles
+        l.remove(main_window)
+        return l
+
+    def click_links(self):
+        wd = self.app.wd
+        wait = self.wait
+
+        main_window = self.get_main_window_id()
+        print('\n' 'main_window =', main_window)
+
+        elements = wd.find_elements_by_css_selector('i.fa.fa-external-link')
+
+        for i in range(len(elements)):
+            elements[i].click()
+            new_id = self.get_new_window_id(main_window)
+            wd.switch_to.window(new_id[0])
+            wait.until(EC.new_window_is_opened(new_id))
+            k = wd.title
+            wd.close()
+            wd.switch_to.window(main_window)
+            print('i =', i, 'title is=', k)
