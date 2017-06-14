@@ -18,8 +18,8 @@
       <file leaf-file-name="test_add_to_cart.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/test_add_to_cart.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state relative-caret-position="391">
+              <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -28,8 +28,8 @@
       <file leaf-file-name="litecart.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fixture/litecart.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-24">
-              <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+            <state relative-caret-position="365">
+              <caret line="243" column="22" lean-forward="false" selection-start-line="243" selection-start-column="22" selection-end-line="243" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -163,7 +163,7 @@
       <recent name="C:\dev\selenium_training\test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.py.test in test_add_to_cart_new_v02">
+  <component name="RunManager" selected="Python tests.py.test in test_add_to_cart.py">
     <configuration default="false" name="py.test in test_add_to_cart.py" type="tests" factoryName="py.test" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -431,8 +431,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in test_add_to_cart_new_v02" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in test_add_to_cart.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in test_add_to_cart.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in test_add_to_cart_new_v02" />
         <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in test_links.py" />
         <item index="3" class="java.lang.String" itemvalue="Python.test_1" />
         <item index="4" class="java.lang.String" itemvalue="Python.litecart" />
@@ -456,9 +456,6 @@
     <history-entry file="py_test_in_test_add_to_cart_new_v02 - 2017.06.14 at 23h 36m 11s.xml">
       <configuration name="py.test in test_add_to_cart_new_v02" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_test_add_to_cart_py - 2017.06.14 at 23h 22m 48s.xml">
-      <configuration name="py.test in test_add_to_cart.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_in_test_add_to_cart_py - 2017.06.14 at 23h 23m 08s.xml">
       <configuration name="py.test in test_add_to_cart.py" configurationId="tests" />
     </history-entry>
@@ -481,6 +478,9 @@
       <configuration name="py.test in test_add_to_cart.py" configurationId="tests" />
     </history-entry>
     <history-entry file="py_test_in_test_add_to_cart_py - 2017.06.14 at 23h 34m 02s.xml">
+      <configuration name="py.test in test_add_to_cart.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_test_add_to_cart_py - 2017.06.14 at 23h 45m 15s.xml">
       <configuration name="py.test in test_add_to_cart.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -512,7 +512,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="75" />
+      <option name="time" value="76" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -843,16 +843,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_add_to_cart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        <state relative-caret-position="391">
+          <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fixture/litecart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+        <state relative-caret-position="365">
+          <caret line="243" column="22" lean-forward="false" selection-start-line="243" selection-start-column="22" selection-end-line="243" selection-end-column="22" />
           <folding />
         </state>
       </provider>

@@ -239,8 +239,9 @@ class Litecart:
         wd = self.app.wd
         elements = wd.find_elements_by_css_selector('#order_confirmation-wrapper tr:not([class="header"]):not([class="footer"]) td[style="text-align: center;"]')
         l = []
-        for i in range(len(elements)):
-            l.append(elements[0])
+        for row in elements:
+            k = row
+            l.append(k)
         return l
 
     def remove_product(self):
