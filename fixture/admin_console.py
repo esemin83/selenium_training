@@ -335,7 +335,11 @@ class Admin_console:
                                                                Keys.LEFT_CONTROL + Keys.DELETE + '3')
         # submit #
         wd.find_element_by_css_selector('button[name = "save"]').click()
-        print('!')
+
+        f = open('screen.jpg', 'w')
+        wd.get_screenshot_as_file('screen.jpg')
+        f.close()
+        #print('!')
 
     def get_product_list(self):
         wd = self.app.wd
@@ -387,3 +391,34 @@ class Admin_console:
             wd.close()
             wd.switch_to.window(main_window)
             print('i =', i, 'title is=', k)
+
+######################################################################################################################
+
+    def open_product_list(self):
+        wd = self.app.wd
+        wait = self.wait
+        wd.find_element_by_css_selector('li#app->a[href$="catalog"]').click()
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[href$="category_id=0"]')))
+        wd.find_element_by_css_selector('a[href$="category_id=1"]').click()
+        #print('!')
+
+    def get_product_list_on_catalog(self):
+        wd = self.app.wd
+        elements = wd.find_elements_by_css_selector('a[href*="category_id="]:nth-child(2):not([class="button"])')
+        l = []
+        for row in elements:
+            n = row.get_attribute('innerHTML')
+            l.append(n)
+        return l
+
+    def click_products(self):
+        wd = self.app.wd
+        t = self.get_product_list_on_catalog()
+        for i in range(len(t)):
+            wd.find_element_by_link_text('%s' % t[i]).click()
+            self.open_product_list()
+
+
+
+
+

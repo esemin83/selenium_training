@@ -4,6 +4,8 @@ import re
 import string
 import random
 import os.path
+from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
 def test_re():
@@ -60,3 +62,14 @@ def test_get_l(app):
 
     #assert l.index('aC') is not None
     print(l)
+
+
+def test_driver_logs():
+    d = DesiredCapabilities.CHROME
+    d['loggingPrefs'] = {'browser': 'ALL'}
+    driver = webdriver.Chrome(desired_capabilities=d)
+    # load some site
+    driver.get('http://foo.com')
+    # print messages
+    for entry in driver.get_log('browser'):
+        print(entry)

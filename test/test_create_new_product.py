@@ -2,6 +2,7 @@ from test.test_create_new_user import random_val
 
 
 def test_create_new_product(app):
+    wd = app.wd
     app.session.login_as_admin()
     product_name = random_val('name', 10)
     file_name = 'lenin.jpg'
@@ -15,4 +16,11 @@ def test_create_new_product(app):
         print('Product not in list')
         result = 'False'
     assert result == 'True'
+
+    for q in wd.get_log('browser'):
+        print(q)
+
+
+
+
 
