@@ -7,6 +7,9 @@ from fixture.session import Session
 from fixture.litecart import Litecart
 from selenium.webdriver.support.events import EventFiringWebDriver, AbstractEventListener
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from page.main_page import Main_page
+from page.product_page import Product_page
+from page.cart_page import Cart_page
 
 
 class Application:
@@ -24,14 +27,18 @@ class Application:
         #print(self.wd.capabilities)
 
         # протооколирование #
-        #self.wd = EventFiringWebDriver(webdriver.Chrome(), MyListener())
+        self.wd = EventFiringWebDriver(webdriver.Chrome(desired_capabilities={'unexpectedAlertBehaviour': 'dismiss'}), MyListener())
+        print(self.wd.capabilities)
 
         # лог браузера + протооколирование - только для хрома??? #
+        #d = DesiredCapabilities.CHROME
+        #d['loggingPrefs'] = {'browser': 'ALL'}
 
-        d = DesiredCapabilities.CHROME
-        d['loggingPrefs'] = {'browser': 'ALL'}
+        # proxy #
+        #d['proxy'] = {"proxyType": "MANUAL", "httpProxy": "localhost:8888"}
+
         #self.wd = EventFiringWebDriver(webdriver.Chrome(desired_capabilities=d), MyListener())
-        self.wd = EventFiringWebDriver(webdriver.Chrome(), MyListener())
+        #self.wd = EventFiringWebDriver(webdriver.Chrome(), MyListener())
 
         # remote #
         #self.wd = webdriver.Remote("http://192.168.1.107:4444/wd/hub", desired_capabilities={"browserName": "internet explorer"})
@@ -44,6 +51,9 @@ class Application:
         self.adm = Admin_console(self)
         self.session = Session(self)
         self.lt = Litecart(self)
+        self.mp = Main_page(self)
+        self.pp = Product_page(self)
+        self.cp = Cart_page(self)
 
     def destroy(self):
         self.wd.quit()

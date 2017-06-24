@@ -81,6 +81,42 @@ class Litecart:
 ######################################################################################################################
 ######################################################################################################################
 
+    # Измененный сценарий работы с корзиной #
+
+    def open_page(self):
+        self.app.mp.mp_open()
+
+    def add_product_to_cart_v1(self):
+        # открыть первый продукт #
+        self.app.mp.mp_open_first_product()
+        # на случай выпадашки #
+        if self.app.pp.select_is_present > 0:
+            self.app.pp.click_select()
+        # текущее значение счетчика в корзине #
+        item_1 = self.app.pp.get_item_1
+        # новое ожидаемое значение счетчика #
+        new_value_of_item = item_1 + 1
+        # нажать 'добавить' #
+        self.app.pp.click_add(new_value_of_item)
+        # новое значение счетчика в корзине #
+        item_2 = self.app.pp.get_item_2
+        # проверка, что значение соответствует ожидаемому #
+        assert new_value_of_item == item_2
+        self.app.pp.return_to_main_page()
+
+    def remove_product_one_by_one_v02(self):
+        # перейти в корзину #
+        self.app.cp.cart_checkout()
+        # всего эелементов в корзите #
+        elements_in_table = self.app.cp.elements_in_table()
+        # удалить #
+        self.app.cp.remove(elements_in_table)
+        # ожидание появления элемента '<< Back' #
+        self.app.cp.is_finish()
+
+
+######################################################################################################################
+
     def open_first_product(self):
         wd = self.app.wd
         wait = self.wait
