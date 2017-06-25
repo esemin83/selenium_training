@@ -22,12 +22,12 @@ class Application:
         #self.wd.implicitly_wait(3)
         #print(self.wd.capabilities)
 
-        #self.wd = webdriver.Chrome()#(desired_capabilities={'browser': 'ALL'})
+        self.wd = webdriver.Chrome()#(desired_capabilities={'browser': 'ALL'})
         #self.wd = webdriver.Ie()
         #print(self.wd.capabilities)
 
         # протооколирование #
-        self.wd = EventFiringWebDriver(webdriver.Chrome(desired_capabilities={'unexpectedAlertBehaviour': 'dismiss'}), MyListener())
+        #self.wd = EventFiringWebDriver(webdriver.Chrome(desired_capabilities={'unexpectedAlertBehaviour': 'dismiss'}), MyListener())
         print(self.wd.capabilities)
 
         # лог браузера + протооколирование - только для хрома??? #

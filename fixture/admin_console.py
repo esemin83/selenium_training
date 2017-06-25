@@ -276,6 +276,45 @@ class Admin_console:
 ######################################################################################################################
 ######################################################################################################################
 
+    # Измененный сценарий проходящий по всем разделам админки #
+
+    def get_upper_menu(self):
+        wd = self.app.wd
+        elements = wd.find_elements_by_css_selector('span[class="name"]')
+        l = []
+        for row in elements:
+            t = row.get_attribute("innerText")
+            l.append(t)
+        return l
+
+    def get_lower_menu(self):
+        wd = self.app.wd
+        elements = wd.find_elements_by_css_selector('span[class="name"]:nth-child(1)')
+        l = []
+        for row in elements:
+            t = row.get_attribute("innerText")
+            l.append(t)
+        return l
+
+    def click_menu(self):
+        wd = self.app.wd
+        up_list = self.get_upper_menu()
+        for i in range(len(up_list)):
+            wd.find_element_by_link_text('%s' % up_list[i]).click()
+            low_list = self.get_lower_menu()
+            if len(low_list) > 0:
+                for k in range(len(low_list)):
+                    wd.find_element_by_link_text('%s' % low_list[k]).click()
+                    low_title = wd.title
+                    print('\n',  'low_title is', low_title)
+                    assert low_title is not None
+            up_title = wd.title
+            print('\n', 'up_title is', up_title)
+            assert up_title is not None
+
+######################################################################################################################
+######################################################################################################################
+
     def get_countries_list_v3(self):
         wd = self.app.wd
         wd.find_element_by_css_selector('li#app->a[href$="countries"]').click()

@@ -73,3 +73,10 @@ def test_driver_logs():
     # print messages
     for entry in driver.get_log('browser'):
         print(entry)
+
+
+def test_string():
+    s = "Template | My Store"
+    t = s.split(' |')
+    print(t[0])
+

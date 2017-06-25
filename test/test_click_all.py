@@ -1,28 +1,6 @@
 
-
-def test_click_all_new(app):
-    app.session.login_as_admin()
-    app.adm.click_appearence_new()
-    app.adm.click_catalog_new()
-    app.adm.click_countries_new()
-    app.adm.click_currencies_new()
-    app.adm.click_customers_new()
-    app.adm.click_geo_zones_new()
-    app.adm.click_languages_new()
-    app.adm.click_modules_new()
-    app.adm.click_orders_new()
-    app.adm.click_pages_new()
-    app.adm.click_reports_new()
-    app.adm.click_setting_new()
-    app.adm.click_slides_new()
-    app.adm.click_tax_new()
-    app.adm.click_translations_new()
-    app.adm.click_users_new()
-    app.adm.click_vqmods_new()
-    app.session.logout_as_admin()
-
 '''
-def test_click_all(app):
+def test_click_all_v01(app):
     app.session.login_as_admin()
 
     app.adm.click_appearence()
@@ -44,4 +22,33 @@ def test_click_all(app):
     app.adm.click_vqmods()
 
     app.session.logout_as_admin()
+
+
+def test_click_all_v02(app):
+    app.session.login_as_admin()
+    app.adm.click_appearence_new()
+    app.adm.click_catalog_new()
+    app.adm.click_countries_new()
+    app.adm.click_currencies_new()
+    app.adm.click_customers_new()
+    app.adm.click_geo_zones_new()
+    app.adm.click_languages_new()
+    app.adm.click_modules_new()
+    app.adm.click_orders_new()
+    app.adm.click_pages_new()
+    app.adm.click_reports_new()
+    app.adm.click_setting_new()
+    app.adm.click_slides_new()
+    app.adm.click_tax_new()
+    app.adm.click_translations_new()
+    app.adm.click_users_new()
+    app.adm.click_vqmods_new()
+    app.session.logout_as_admin()
+
 '''
+
+
+def test_click_all_v03(app):
+    app.session.login_as_admin()
+    app.adm.click_menu()
+    app.session.logout_as_admin()
